@@ -12,10 +12,10 @@
 
 jQuery(document).ready(function(){
 	if(jQuery('#user_box').length!=0){
-		var ph 			= {};
+		var ph      = {};
 		ph.torrents = ['Torente', 'Раздачи'];
-		ph.users 		= ['Utilizatori', 'Пользователи'];
-		ph.forum 		= ['Forum', 'Форум'];
+		ph.users    = ['Utilizatori', 'Пользователи'];
+		ph.forum    = ['Forum', 'Форум'];
 
 		if(!message.lang) message.lang = 'ro';
 		var l = (message.lang == 'ro') ? 0 : 1;
