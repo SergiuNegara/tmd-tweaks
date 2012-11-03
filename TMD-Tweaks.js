@@ -7,7 +7,7 @@
 // @include     *torrentsmoldova.com/*
 // @include     *torrentsmoldova.org/*
 // @include     *torrentsmoldova.net/*
-// @version     1.1.0
+// @version     1.2.0
 // ==/UserScript==
 
 $j(document).ready(function(){
@@ -16,7 +16,6 @@ $j(document).ready(function(){
     msg.sf_t   = ['Torente', 'Раздачи'];
     msg.sf_u   = ['Utilizatori', 'Пользователи'];
     msg.sf_f   = ['Forum', 'Форум'];
-    msg.topic  = ['Denumirea temei', 'Название темы']
 
     if(!message.lang) message.lang = 'ro';
     var l      = (message.lang == 'ro') ? 0 : 1;
@@ -40,23 +39,24 @@ $j(document).ready(function(){
   }
 
 // topic title block (as is - to be optimized)
-if(location.search.match(/viewtopic/))
+if($j('title').text().match(/((Vezi tema)|(Detaliile torrentului)|(Просмотр темы)|(Детали торрента))/g))
 {
-  var topic = $j('title').text().replace(/(^(Vezi tema - )|^(Просмотр темы - )|( ::(.+)$))/g, '');
-  var topichtml = '<div id="topic-title">' + msg.topic[l] + ': ' + topic + '</div>';
-  var topicstyle = '<style>\
-  #topic-title{\
+  var entry_title = $j('title').text().replace(/( :: Torrents(.+)$)/g, '');
+  var title_block_html = '<div id="entry-title">' + entry_title + '</div>';
+  var title_block_style = '<style>\
+  #entry-title{\
     background-color: #ECE9D8;\
     border: 1px solid #A79F72;\
+    max-width: 350px;\
     padding: 10px;\
     position: fixed; right: 10px; bottom: 10px;\
     transition: all .5s ease;\
   }\
-  #topic-title:hover{\
+  #entry-title:hover{\
     opacity: 0;\
   }\
 </style>';
-  $j('head').append(topicstyle);
-  $j('body').append(topichtml);
+  $j('head').append(title_block_style);
+  $j('body').append(title_block_html);
 }
 });
