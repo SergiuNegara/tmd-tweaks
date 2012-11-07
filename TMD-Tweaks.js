@@ -7,7 +7,7 @@
 // @include     *torrentsmoldova.com/*
 // @include     *torrentsmoldova.org/*
 // @include     *torrentsmoldova.net/*
-// @version     2.0.0
+// @version     2.0.1
 // ==/UserScript==
 
 
@@ -17,8 +17,12 @@ TMDTweaks(); //run
 
 function TMDTweaks()
 {
-  var _window = unsafeWindow || window;//'cause chrome security policy
-  (!_window.jQuery) && window.setTimeout(TMDTweaks, 500) || init(_window.jQuery, _window);
+    var _window = window;
+    try {
+        _window = unsafeWindow; //'cause chrome security policy
+    } catch(e){}
+
+    (!_window.jQuery) && window.setTimeout(TMDTweaks, 500) || init(_window.jQuery, _window);
 }
 
 function init($, _window) //all code goes here
