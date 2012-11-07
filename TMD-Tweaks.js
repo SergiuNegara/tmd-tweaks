@@ -7,7 +7,7 @@
 // @include     *torrentsmoldova.com/*
 // @include     *torrentsmoldova.org/*
 // @include     *torrentsmoldova.net/*
-// @version     2.0.1
+// @version     2.0.2
 // ==/UserScript==
 
 
@@ -85,7 +85,7 @@ function init($, _window) //all code goes here
   {
     var tt_html  = '<div id="entry-title">' + document.title.replace(/( :: Torrents(.+)$)/g, '') + '</div>';
     var tt_style =
-        '#entry-title{ background-color: #ECE9D8; border: 1px solid #A79F72; max-width: 350px; padding: 10px; position: fixed; right: 10px; bottom: 10px; transition: all .5s ease; }'+
+        '#entry-title{ background-color: #ECE9D8; border: 1px solid #A79F72; max-width: 350px; padding: 10px; position: fixed; right: 10px; bottom: 10px; -webkit-transition: all .5s ease; -moz-transition: all .5s ease; -ms-transition: all .5s ease; -o-transition: all .5s ease; transition: all .5s ease; }'+
         '#entry-title:hover{opacity: 0;}';
 
     $style.append(tt_style);
