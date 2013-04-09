@@ -1,15 +1,13 @@
 tmd-tweaks
 ==========
 
-Userscript for tweaking TMD funcionality
+Userscript for tweaking TMD features
 
-#Functionality:
-* Adds new search fields by different parameters.
-* Improved design
-* Improved UI
+#Features:
+* Adds search fileds for torrents, users and forum posts to site header.
+* Adds the page title into a new element in the bottom-right corner of the page.
 
 #To do:
-* New CSS layout
-* Sorting filters
+* Add settings
 
 Have fun :)
